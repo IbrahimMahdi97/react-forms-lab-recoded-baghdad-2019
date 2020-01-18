@@ -7,7 +7,7 @@ class TwitterMessage extends React.Component {
    this.state = {
       message: ''
     };
-
+}
   render() {
     return (
       <div>
