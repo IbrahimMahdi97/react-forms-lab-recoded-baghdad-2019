@@ -24,25 +24,13 @@ class TwitterMessage extends React.Component {
     this.props.handleLogin(this.state)
   }
 
- render() {
+  render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <label>
-            Username
-            <input id="username" name="username" type="text" onChange={this.handleChange} value={this.state.username}/>
-          </label>
-        </div>
-        <div>
-          <label>
-            Password
-            <input id="password" name="password" type="password" onChange={this.handleChange} value={this.state.password}/>
-          </label>
-        </div>
-        <div>
-          <button type="submit">Log in</button>
-        </div>
-      </form>
+      <div>
+        <strong>Your message:</strong>
+        <input type="text" onChange={event => this.setState({message: event.target.value})} value={this.state.message}/>
+        {this.props.maxChars-this.state.message.length}
+      </div>
     );
   }
 }
